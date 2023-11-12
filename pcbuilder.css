@@ -1,0 +1,55 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #1c1c1c; /* Black background */
+    color: #b39ddb; /* Purple text color */
+    text-align: center;
+}
+
+header {
+    background-color: #311b92; /* Dark purple header background */
+    color: #fff;
+    text-align: center;
+    padding: 1em;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+section {
+    margin: 20px;
+    padding: 20px;
+    background-color: #2e2e2e; /* Dark gray section background */
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1); /* White box shadow */
+}
+
+h2 {
+    color: #b39ddb; /* Purple heading color */
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+#budgetSelect {
+    border-radius: 15px; /* Make the budget selection box round */
+}
+
+footer {
+    background-color: #311b92; /* Dark purple footer background */
+    color: #fff;
+    text-align: center;
+    padding: 1em;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+

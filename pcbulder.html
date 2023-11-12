@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PC Build Recommender</title>
+    <link rel="stylesheet" type="text/css" href="pcbuilder.css">
+</head>
+<body>
+
+    <header>
+        <h1>GKD PC Build Recommender</h1>
+    </header>
+
+    <section>
+        <label for="budgetSelect">Select Budget:</label>
+        <select id="budgetSelect" onchange="updateBudget()">
+            <!-- Options for budgets from 500 to 3000 by step of 100 euros -->
+            <option value="500">500€</option>
+            <option value="600">600€</option>
+            <option value="700">700€</option>
+            <option value="800">800€</option>
+            <option value="900">900€</option>
+            <option value="1000" selected>1000€</option>
+            <option value="1100">1100€</option>
+            <option value="1200">1200€</option>
+            <option value="1300">1300€</option>
+            <option value="1400">1400€</option>
+            <option value="1500">1500€</option>
+            <option value="1600">1600€</option>
+            <option value="1700">1700€</option>
+            <option value="1800">1800€</option>
+            <option value="1900">1900€</option>
+            <option value="2000">2000€</option>
+            <option value="2100">2100€</option>
+            <option value="2200">2200€</option>
+            <option value="2300">2300€</option>
+            <option value="2400">2400€</option>
+            <option value="2500">2500€</option>
+            <option value="2600">2600€</option>
+            <option value="2700">2700€</option>
+            <option value="2800">2800€</option>
+            <option value="2900">2900€</option>
+            <option value="3000">3000€</option>
+        </select>
+
+        <h2>Your Budget: <span id="budgetDisplay">1000€</span></h2>
+        <ul id="componentList">
+            <!-- Initially populated with components for 1000€ budget -->
+            <li>CPU: Intel Core i5-9600K</li>
+            <li>GPU: NVIDIA GeForce GTX 1660 Ti</li>
+            <li>RAM: Corsair Vengeance LPX 16GB</li>
+            <li>Storage: Samsung 970 EVO 500GB SSD</li>
+            <li>Motherboard: ASUS Prime Z390-A</li>
+        </ul>
+    </section>
+
+    <footer>
+        &copy; GKD PC Build Recommender
+    </footer>
+
+    <script>
+        function updateBudget() {
+            var selectedBudget = document.getElementById("budgetSelect").value;
+            document.getElementById("budgetDisplay").textContent = selectedBudget + "€";
+
+            // Get the component list container
+            var componentList = document.getElementById("componentList");
+
+            // Clear existing components
+            componentList.innerHTML = "";
+
+            // Add components based on the selected budget
+            switch (parseInt(selectedBudget)) {
+                case 500:
+                    componentList.innerHTML += "<li>CPU: AMD Ryzen 3 3100</li>";
+                    componentList.innerHTML += "<li>GPU: NVIDIA GeForce GTX 1650</li>";
+                    componentList.innerHTML += "<li>RAM: Crucial Ballistix 8GB</li>";
+                    componentList.innerHTML += "<li>Storage: Kingston A2000 240GB SSD</li>";
+                    componentList.innerHTML += "<li>Motherboard: ASRock B450M-HDV R4.0</li>";
+                    break;
+
+                case 600:
+                    componentList.innerHTML += "<li>CPU: AMD Ryzen 5 2600</li>";
+                    componentList.innerHTML += "<li>GPU: AMD Radeon RX 570</li>";
+                    componentList.innerHTML += "<li>RAM: Corsair Vengeance LPX 8GB</li>";
+                    componentList.innerHTML += "<li>Storage: Crucial MX500 500GB SSD</li>";
+                    componentList.innerHTML += "<li>Motherboard: MSI B450 TOMAHAWK MAX</li>";
+                    break;
+
+                    case 700:
+            componentList.innerHTML += "<li>CPU: AMD Ryzen 5 3600</li>";
+            componentList.innerHTML += "<li>GPU: NVIDIA GeForce GTX 1660 Super</li>";
+            componentList.innerHTML += "<li>RAM: G.Skill Ripjaws V 16GB</li>";
+            componentList.innerHTML += "<li>Storage: WD Blue SN550 500GB NVMe SSD</li>";
+            componentList.innerHTML += "<li>Motherboard: ASUS ROG Strix B450-F Gaming</li>";
+            break;
+
+                    case 800:
+            componentList.innerHTML += "<li>CPU: Intel Core i5-10400</li>";
+            componentList.innerHTML += "<li>GPU: AMD Radeon RX 5600 XT</li>";
+            componentList.innerHTML += "<li>RAM: Corsair Vengeance LPX 16GB</li>";
+            componentList.innerHTML += "<li>Storage: Crucial P3 500GB NVMe SSD</li>";
+            componentList.innerHTML += "<li>Motherboard: MSI B460 TOMAHAWK</li>";
+            break;
+
+                    case 900:
+            componentList.innerHTML += "<li>CPU: AMD Ryzen 7 3700X</li>";
+            componentList.innerHTML += "<li>GPU: NVIDIA GeForce RTX 2060</li>";
+            componentList.innerHTML += "<li>RAM: Corsair Vengeance LPX 16GB</li>";
+            componentList.innerHTML += "<li>Storage: Samsung 970 EVO 1TB NVMe SSD</li>";
+            componentList.innerHTML += "<li>Motherboard: ASUS TUF Gaming X570-PLUS</li>";
+            break;
+
+                    case 1000:
+            componentList.innerHTML += "<li>CPU: AMD Ryzen 5 5600X</li>";
+            componentList.innerHTML += "<li>GPU: NVIDIA GeForce RTX 3060</li>";
+            componentList.innerHTML += "<li>RAM: Corsair Vengeance LPX 16GB</li>";
+            componentList.innerHTML += "<li>Storage: Samsung 970 EVO 1TB NVMe SSD</li>";
+            componentList.innerHTML += "<li>Motherboard: ASUS ROG Strix B550-F Gaming</li>";
+            break;
+
+            case 1100:
+            componentList.innerHTML += "<li>CPU: AMD Ryzen 7 3700X</li>";
+            componentList.innerHTML += "<li>GPU: NVIDIA GeForce RTX 3060</li>";
+            componentList.innerHTML += "<li>RAM: G.Skill Ripjaws V 32GB</li>";
+            componentList.innerHTML += "<li>Storage: Samsung 970 EVO 1TB NVMe SSD</li>";
+            componentList.innerHTML += "<li>Motherboard: MSI MAG B550 TOMAHAWK</li>";
+            break;
+
+        case 1200:
+            componentList.innerHTML += "<li>CPU: Intel Core i7-10700K</li>";
+            componentList.innerHTML += "<li>GPU: NVIDIA GeForce RTX 3070</li>";
+            componentList.innerHTML += "<li>RAM: Corsair Vengeance LPX 32GB</li>";
+            componentList.innerHTML += "<li>Storage: Western Digital Black 1TB NVMe SSD</li>";
+            componentList.innerHTML += "<li>Motherboard: ASUS ROG Strix Z490-E Gaming</li>";
+            break;
+
+        case 1300:
+            componentList.innerHTML += "<li>CPU: AMD Ryzen 7 5800X</li>";
+            componentList.innerHTML += "<li>GPU: NVIDIA GeForce RTX 3070</li>";
+            componentList.innerHTML += "<li>RAM: Corsair Vengeance LPX 32GB</li>";
+            componentList.innerHTML += "<li>Storage: Samsung 970 EVO Plus 1TB NVMe SSD</li>";
+            componentList.innerHTML += "<li>Motherboard: ASUS ROG Strix B550-E Gaming</li>";
+            break;
+
+        case 1400:
+            componentList.innerHTML += "<li>CPU: Intel Core i9-10850K</li>";
+            componentList.innerHTML += "<li>GPU: NVIDIA GeForce RTX 3080</li>";
+            componentList.innerHTML += "<li>RAM: G.Skill Ripjaws V 32GB</li>";
+            componentList.innerHTML += "<li>Storage: Samsung 970 EVO Plus 1TB NVMe SSD</li>";
+            componentList.innerHTML += "<li>Motherboard: MSI MPG Z490 Gaming Edge WiFi</li>";
+            break;
+
+        case 1500:
+            componentList.innerHTML += "<li>CPU: AMD Ryzen 9 5900X</li>";
+            componentList.innerHTML += "<li>GPU: NVIDIA GeForce RTX 3080</li>";
+            componentList.innerHTML += "<li>RAM: Corsair Vengeance LPX 32GB</li>";
+            componentList.innerHTML += "<li>Storage: Samsung 970 EVO Plus 1TB NVMe SSD</li>";
+            componentList.innerHTML += "<li>Motherboard: ASUS ROG Strix X570-E Gaming</li>";
+            break;
+
+        case 1600:
+            componentList.innerHTML += "<li>CPU: Intel Core i9-10900K</li>";
+            componentList.innerHTML += "<li>GPU: NVIDIA GeForce RTX 3090</li>";
+            componentList.innerHTML += "<li>RAM: G.Skill Trident Z RGB 32GB</li>";
+            componentList.innerHTML += "<li>Storage: Samsung 970 EVO Plus 2TB NVMe SSD</li>";
+            componentList.innerHTML += "<li>Motherboard: MSI MPG Z490 Gaming Carbon WiFi</li>";
+            break;
+
+        case 1700:
+            componentList.innerHTML += "<li>CPU: AMD Ryzen 9 5950X</li>";
+            componentList.innerHTML += "<li>GPU: NVIDIA GeForce RTX 3090</li>";
+            componentList.innerHTML += "<li>RAM: Corsair Dominator Platinum RGB 32GB</li>";
+            componentList.innerHTML += "<li>Storage: Samsung 970 EVO Plus 2TB NVMe SSD</li>";
+            componentList.innerHTML += "<li>Motherboard: ASUS ROG Strix X570-F Gaming</li>";
+            break;
+
+        case 1800:
+            componentList.innerHTML += "<li>CPU: Intel Core i9-11900K</li>";
+            componentList.innerHTML += "<li>GPU: NVIDIA GeForce RTX 3080 Ti</li>";
+            componentList.innerHTML += "<li>RAM: G.Skill Trident Z Royal 32GB</li>";
+            componentList.innerHTML += "<li>Storage: Samsung 970 EVO Plus 2TB NVMe SSD</li>";
+            componentList.innerHTML += "<li>Motherboard: ASUS ROG Strix Z590-E Gaming WiFi 6</li>";
+            break;
+
+        case 1900:
+            componentList.innerHTML += "<li>CPU: AMD Ryzen 9 5950X</li>";
+            componentList.innerHTML += "<li>GPU: NVIDIA GeForce RTX 3080 Ti</li>";
+            componentList.innerHTML += "<li>RAM: Corsair Dominator Platinum RGB 32GB</li>";
+            componentList.innerHTML += "<li>Storage: Samsung 970 EVO Plus 2TB NVMe SSD</li>";
+            componentList.innerHTML += "<li>Motherboard: MSI MEG X570 Unify</li>";
+            break;
+
+        case 2000:
+            componentList.innerHTML += "<li>CPU: Intel Core i9-11900K</li>";
+            componentList.innerHTML += "<li>GPU: NVIDIA GeForce RTX 3090</li>";
+            componentList.innerHTML += "<li>RAM: G.Skill Trident Z Royal 64GB</li>";
+            componentList.innerHTML += "<li>Storage: Samsung 970 EVO Plus 2TB NVMe SSD</li>";
+            componentList.innerHTML += "<li>Motherboard: ASUS ROG Strix Z590-E Gaming WiFi 6</li>";
+            break;
+
+            case 2100:
+            componentList.innerHTML += "<li>CPU: Intel Core i9-10850K</li>";
+            componentList.innerHTML += "<li>GPU: NVIDIA GeForce RTX 3080</li>";
+            componentList.innerHTML += "<li>RAM: G.Skill Trident Z Royal 32GB</li>";
+            componentList.innerHTML += "<li>Storage: Samsung 970 EVO Plus 1TB NVMe SSD</li>";
+            componentList.innerHTML += "<li>Motherboard: MSI MEG Z490 ACE</li>";
+            break;
+
+        case 2200:
+            componentList.innerHTML += "<li>CPU: AMD Ryzen 9 5900X</li>";
+            componentList.innerHTML += "<li>GPU: NVIDIA GeForce RTX 3080</li>";
+            componentList.innerHTML += "<li>RAM: Corsair Dominator Platinum RGB 64GB</li>";
+            componentList.innerHTML += "<li>Storage: Samsung 970 EVO Plus 2TB NVMe SSD</li>";
+            componentList.innerHTML += "<li>Motherboard: ASUS ROG Strix X570-E Gaming</li>";
+            break;
+
+        case 2300:
+            componentList.innerHTML += "<li>CPU: Intel Core i9-10900K</li>";
+            componentList.innerHTML += "<li>GPU: NVIDIA GeForce RTX 3090</li>";
+            componentList.innerHTML += "<li>RAM: G.Skill Trident Z Royal 64GB</li>";
+            componentList.innerHTML += "<li>Storage: Samsung 970 EVO Plus 2TB NVMe SSD</li>";
+            componentList.innerHTML += "<li>Motherboard: MSI MEG Z490 ACE</li>";
+            break;
+
+        case 2400:
+            componentList.innerHTML += "<li>CPU: AMD Ryzen 9 5950X</li>";
+            componentList.innerHTML += "<li>GPU: NVIDIA GeForce RTX 3090</li>";
+            componentList.innerHTML += "<li>RAM: Corsair Dominator Platinum RGB 64GB</li>";
+            componentList.innerHTML += "<li>Storage: Samsung 970 EVO Plus 2TB NVMe SSD</li>";
+            componentList.innerHTML += "<li>Motherboard: ASUS ROG Strix X570-E Gaming</li>";
+            break;
+
+        case 2500:
+            componentList.innerHTML += "<li>CPU: Intel Core i9-11900K</li>";
+            componentList.innerHTML += "<li>GPU: NVIDIA GeForce RTX 3080 Ti</li>";
+            componentList.innerHTML += "<li>RAM: G.Skill Trident Z RGB 64GB</li>";
+            componentList.innerHTML += "<li>Storage: Samsung 970 EVO Plus 2TB NVMe SSD</li>";
+            componentList.innerHTML += "<li>Motherboard: MSI MEG Z590 ACE</li>";
+            break;
+
+        case 2600:
+            componentList.innerHTML += "<li>CPU: AMD Ryzen 9 5950X</li>";
+            componentList.innerHTML += "<li>GPU: NVIDIA GeForce RTX 3080 Ti</li>";
+            componentList.innerHTML += "<li>RAM: Corsair Dominator Platinum RGB 64GB</li>";
+            componentList.innerHTML += "<li>Storage: Samsung 970 EVO Plus 2TB NVMe SSD</li>";
+            componentList.innerHTML += "<li>Motherboard: ASUS ROG Strix X570-E Gaming</li>";
+            break;
+
+        case 2700:
+            componentList.innerHTML += "<li>CPU: Intel Core i9-11900K</li>";
+            componentList.innerHTML += "<li>GPU: NVIDIA GeForce RTX 3090</li>";
+            componentList.innerHTML += "<li>RAM: G.Skill Trident Z RGB 64GB</li>";
+            componentList.innerHTML += "<li>Storage: Samsung 970 EVO Plus 2TB NVMe SSD</li>";
+            componentList.innerHTML += "<li>Motherboard: MSI MEG Z590 ACE</li>";
+            break;
+
+        case 2800:
+            componentList.innerHTML += "<li>CPU: AMD Ryzen 9 5950X</li>";
+            componentList.innerHTML += "<li>GPU: NVIDIA GeForce RTX 3090</li>";
+            componentList.innerHTML += "<li>RAM: Corsair Dominator Platinum RGB 64GB</li>";
+            componentList.innerHTML += "<li>Storage: Samsung 970 EVO Plus 2TB NVMe SSD</li>";
+            componentList.innerHTML += "<li>Motherboard: ASUS ROG Strix X570-E Gaming</li>";
+            break;
+
+        case 2900:
+            componentList.innerHTML += "<li>CPU: Intel Core i9-11900K</li>";
+            componentList.innerHTML += "<li>GPU: NVIDIA GeForce RTX 3090</li>";
+            componentList.innerHTML += "<li>RAM: G.Skill Trident Z RGB 64GB</li>";
+            componentList.innerHTML += "<li>Storage: Samsung 970 EVO Plus 2TB NVMe SSD</li>";
+            componentList.innerHTML += "<li>Motherboard: MSI MEG Z590 ACE</li>";
+            break;
+
+        case 3000:
+            componentList.innerHTML += "<li>CPU: AMD Ryzen 9 5950X</li>";
+            componentList.innerHTML += "<li>GPU: NVIDIA GeForce RTX 3090</li>";
+            componentList.innerHTML += "<li>RAM: Corsair Dominator Platinum RGB 64GB</li>";
+            componentList.innerHTML += "<li>Storage: Samsung 970 EVO Plus 2TB NVMe SSD</li>";
+            componentList.innerHTML += "<li>Motherboard: ASUS ROG Strix X570-E Gaming</li>";
+            break;
+
+                
+            }
+        }
+    </script>
+</body>
+</html>
